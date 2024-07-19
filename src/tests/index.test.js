@@ -22,4 +22,16 @@ describe("string calculation", () => {
     expect(add("1\n2,3")).toBe(6);
   });
 
+  it("should return sum of all numbers if a string contains numbers separated given delimiter ';'", () => {
+    expect(add("//;\n1;2;3;4")).toBe(10);
+  });
+
+  it("should return sum of all numbers if a string contains numbers separated given delimiter '?'", () => {
+    expect(add("//?\n1?2?3?4")).toBe(10);
+  });
+
+  it("should return sum of all numbers if a string contains numbers separated given delimiter '!'", () => {
+    expect(add("//!\n1!2!3!4")).toBe(10);
+  });
+
 });
