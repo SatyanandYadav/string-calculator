@@ -17,4 +17,9 @@ describe("string calculation", () => {
   it("should return sum of all numbers if a string contains numbers separated by ','", () => {
     expect(add("5,3,14,23")).toBe(45);
   });
+
+  it("should return sum of all numbers if a string contains numbers separated by ',' or '\\n'", () => {
+    expect(add("1\n2,3")).toBe(6);
+  });
+
 });
