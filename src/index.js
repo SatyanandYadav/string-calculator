@@ -1,4 +1,7 @@
 export const stringCalculator = (numbers) => {
-    if (!numbers) return 0;
-   return Number(numbers);
-}
+  if (!numbers) return 0;
+  const sum = numbers
+    .split(",")
+    .reduce((sum, number) => sum + Number(number), 0);
+  return sum;
+};
