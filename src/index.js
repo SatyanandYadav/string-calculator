@@ -10,7 +10,8 @@ export const add = (numbers) => {
     .split(!parseInt(delimiter) ? delimiter : /,|\n/)
     .reduce((sum, number) => {
       if (Number(number) < 0) negativeNumbers.push(number);
-      return sum + Number(number);
+      else if (Number(number) <= 1000) sum += Number(number);
+      return sum;
     }, 0);
 
   if (negativeNumbers.length) {

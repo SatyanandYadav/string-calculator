@@ -45,4 +45,8 @@ describe("string calculation", () => {
       "negative numbers not allowed -3,-5,-6."
     );
   });
+
+  it("should return sum of all numbers except numbers greater than 1000 in numbers string", () => {
+    expect(add("//;\n1;2;1001;1010")).toBe(3);
+  });
 });
