@@ -34,4 +34,15 @@ describe("string calculation", () => {
     expect(add("//!\n1!2!3!4")).toBe(10);
   });
 
+  it("should throw an error if a string contains a single negative numbers", () => {
+    expect(() => add("//!\n1!2!-3!4")).toThrow(
+      "negative numbers not allowed -3."
+    );
+  });
+
+  it("should throw an error if a string contains a multiple negative numbers", () => {
+    expect(() => add("1\n2,-3,4,-5,-6,7")).toThrow(
+      "negative numbers not allowed -3,-5,-6."
+    );
+  });
 });
