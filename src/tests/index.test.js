@@ -49,4 +49,8 @@ describe("string calculation", () => {
   it("should return sum of all numbers except numbers greater than 1000 in numbers string", () => {
     expect(add("//;\n1;2;1001;1010")).toBe(3);
   });
+
+  it("should return sum of all numbers if a string contains numbers separated given any length delimiter '***'", () => {
+    expect(add("//[***]\n1***2***3***4")).toBe(10);
+  });
 });

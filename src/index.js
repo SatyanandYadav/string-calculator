@@ -4,7 +4,7 @@ export const add = (numbers) => {
   const negativeNumbers = [];
 
   let [delimiter, allNumbers] = numbers.split("\n");
-  delimiter = delimiter.replace("//", "");
+  delimiter = delimiter.replace(/\/|\[|\]/g, "");
 
   const sum = (!parseInt(delimiter) ? allNumbers : numbers)
     .split(!parseInt(delimiter) ? delimiter : /,|\n/)
