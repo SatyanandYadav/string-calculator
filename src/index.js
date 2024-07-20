@@ -4,10 +4,20 @@ export const add = (numbers) => {
   const negativeNumbers = [];
 
   let [delimiter, allNumbers] = numbers.split("\n");
-  delimiter = delimiter.replace(/\/|\[|\]/g, "");
+  delimiter = delimiter
+    .split("][")
+    .map(
+      (separator) =>
+        "\\" +
+        separator
+          .replace(/\/|\[|\]/g, "")
+          .split("")
+          .join("\\")
+    )
+    .join("|");
 
-  const sum = (!parseInt(delimiter) ? allNumbers : numbers)
-    .split(!parseInt(delimiter) ? delimiter : /,|\n/)
+  const sum = (numbers.includes("//") ? allNumbers : numbers)
+    .split(numbers.includes("//") ? new RegExp(delimiter) : /,|\n/)
     .reduce((sum, number) => {
       if (Number(number) < 0) negativeNumbers.push(number);
       else if (Number(number) <= 1000) sum += Number(number);

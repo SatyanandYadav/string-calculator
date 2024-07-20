@@ -53,4 +53,8 @@ describe("string calculation", () => {
   it("should return sum of all numbers if a string contains numbers separated given any length delimiter '***'", () => {
     expect(add("//[***]\n1***2***3***4")).toBe(10);
   });
+
+  it("should return sum of all numbers if a string contains numbers separated given multiple delimiter '*,@'", () => {
+    expect(add("//[*][@]\n1*2@3*4")).toBe(10);
+  });
 });
