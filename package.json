@@ -1,0 +1,14 @@
+{
+  "name": "string-calculator",
+  "version": "1.0.0",
+  "description": "Sum of all number present in a string",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Satyanand Yadav",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^2.0.3"
+  }
+}
